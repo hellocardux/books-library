@@ -61,10 +61,8 @@ const READING = []; // es. { title:"…", author:"…", start:"26 ott" }
 const BOOKS = [
   { title:"Il cimitero di Praga", author:"Umberto Eco", start:"10 ott", end:"17 ott", days:8, vote:8 },
   { title:"DiversaMente", author:"Immanuel Casto", start:"18 ott", end:"20 ott", days:3, vote:6 },
-  { title:"La sottile arte di fare quello che cazzo ti pare", author:"Mark Manson", start:"21 ott", end:"24 ott", days:4, vote:6.5,
-    note:"Alcune parti molto belle e profonde, altre poco utili per me." },
-  { title:"Il coraggio di provarci", author:"Cristina Scocchia & Francesca Gambarini", start:"25 ott", end:"25 ott", days:1, vote:6.5,
-    note:"Prima parte stucchevole; la parte sul lavoro e sulla vita privata molto emozionante, anche se un po' troppo romanzata." },
+  { title:"La sottile arte di fare quello che cazzo ti pare", author:"Mark Manson", start:"21 ott", end:"24 ott", days:4, vote:6.5 },
+  { title:"Il coraggio di provarci", author:"Cristina Scocchia & Francesca Gambarini", start:"25 ott", end:"25 ott", days:1, vote:6.5 },
 ];
 const fmt = n => String(n).replace(".", ",");
 const stars = v => { const s = Math.floor(v/2); return "★".repeat(s) + "☆".repeat(5-s); };
@@ -83,7 +81,6 @@ document.getElementById("books").innerHTML = BOOKS.slice().reverse().map(b=>`
     <div class="vote"><div class="n">${fmt(b.vote)}/10</div><div class="stars">${stars(b.vote)}</div></div>
     <h3>${esc(b.title)}</h3>
     <div class="meta">${esc(b.author)} · dal ${b.start} al ${b.end} · ${b.days} ${b.days===1?"giorno":"giorni"}</div>
-    ${b.note?`<p class="note">“${esc(b.note)}”</p>`:""}
   </div>`).join("");
 const bars = (arr,val,max,lab) => arr.map(b=>`<div class="bar"><div class="l">${esc(b.title.length>28?b.title.slice(0,26)+"…":b.title)}</div><div class="t"><div class="f" style="width:${val(b)/max*100}%"></div></div><div class="v">${lab(b)}</div></div>`).join("");
 document.getElementById("rank").innerHTML = bars(BOOKS.slice().sort((a,b)=>b.vote-a.vote), b=>b.vote, 10, b=>fmt(b.vote));
