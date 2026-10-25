@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books Library</title>
+<meta name="description" content="Il diario di lettura Kindle di Massimo Cardux: libri letti, giorni impiegati e voti.">
+<style>
+  :root { --bg:#faf7f2; --card:#fff; --ink:#2b2a28; --muted:#7a756d; --accent:#b5651d; --line:#ece6dc; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: Georgia, "Times New Roman", serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+  main { max-width:860px; margin:0 auto; padding:48px 20px 64px; }
+  h1 { font-size:2.4rem; margin:0 0 6px; letter-spacing:.5px; }
+  .sub { color:var(--muted); margin:0 0 36px; font-family: system-ui, sans-serif; font-size:.95rem; }
+  h2 { font-size:1.3rem; margin:40px 0 14px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .stat b { display:block; font-size:1.8rem; color:var(--accent); }
+  .stat span { color:var(--muted); font-family:system-ui,sans-serif; font-size:.85rem; }
+  .book { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:12px; }
+  .book h3 { margin:0; font-size:1.15rem; }
+  .meta { color:var(--muted); font-family:system-ui,sans-serif; font-size:.88rem; margin-top:4px; }
+  .vote { float:right; text-align:right; }
+  .vote .n { font-size:1.4rem; font-weight:bold; color:var(--accent); }
+  .stars { color:#e0a526; letter-spacing:2px; font-size:1rem; }
+  .note { margin:10px 0 0; font-style:italic; }
+  .bar { display:flex; align-items:center; gap:10px; margin:8px 0; font-family:system-ui,sans-serif; font-size:.9rem; }
+  .bar .l { width:200px; flex-shrink:0; }
+  .bar .t { flex:1; background:var(--line); border-radius:6px; height:14px; overflow:hidden; }
+  .bar .f { background:var(--accent); height:100%; }
+  .bar .v { width:70px; text-align:right; color:var(--muted); }
+  .empty { color:var(--muted); font-style:italic; }
+  footer { margin-top:48px; color:var(--muted); font-family:system-ui,sans-serif; font-size:.8rem; text-align:center; }
+  @media (max-width:560px){ .bar .l{ width:120px; } .vote{ float:none; margin-top:8px; text-align:left; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>📚 Books Library</h1>
+  <p class="sub">Il mio diario di lettura su Kindle, dal 10 ottobre 2026. Aggiornato al <span id="updated"></span>.</p>
+
+  <div class="stats" id="stats"></div>
+
+  <h2>In lettura</h2>
+  <div id="reading"></div>
+
+  <h2>Libri finiti</h2>
+  <div id="books"></div>
+
+  <h2>Classifica per voto</h2>
+  <div id="rank"></div>
+
+  <h2>Giorni per libro</h2>
+  <div id="days"></div>
+
+  <footer>I giorni contano sia quello di inizio sia quello di fine. Voti in decimi; le stelle sono il voto diviso due, arrotondato per difetto.</footer>
+</main>
+<script>
+const UPDATED = "25 ottobre 2026";
+const READING = []; // es. { title:"…", author:"…", start:"26 ott" }
+const BOOKS = [
+  { title:"Il cimitero di Praga", author:"Umberto Eco", start:"10 ott", end:"17 ott", days:8, vote:8 },
+  { title:"DiversaMente", author:"Immanuel Casto", start:"18 ott", end:"20 ott", days:3, vote:6 },
+  { title:"La sottile arte di fare quello che cazzo ti pare", author:"Mark Manson", start:"21 ott", end:"24 ott", days:4, vote:6.5,
+    note:"Alcune parti molto belle e profonde, altre poco utili per me." },
+  { title:"Il coraggio di provarci", author:"Cristina Scocchia & Francesca Gambarini", start:"25 ott", end:"25 ott", days:1, vote:6.5,
+    note:"Prima parte stucchevole; la parte sul lavoro e sulla vita privata molto emozionante, anche se un po' troppo romanzata." },
+];
+const fmt = n => String(n).replace(".", ",");
+const stars = v => { const s = Math.floor(v/2); return "★".repeat(s) + "☆".repeat(5-s); };
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("updated").textContent = UPDATED;
+const tot = BOOKS.reduce((a,b)=>a+b.days,0);
+const avgV = BOOKS.reduce((a,b)=>a+b.vote,0)/BOOKS.length;
+document.getElementById("stats").innerHTML = [
+  [BOOKS.length,"libri finiti"],[tot,"giorni di lettura"],[fmt(+(tot/BOOKS.length).toFixed(1)),"giorni in media"],[fmt(+avgV.toFixed(2)),"voto medio"]
+].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+document.getElementById("reading").innerHTML = READING.length
+  ? READING.map(b=>`<div class="book"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} · iniziato il ${b.start}</div></div>`).join("")
+  : `<p class="empty">Nessun libro in corso al momento.</p>`;
+document.getElementById("books").innerHTML = BOOKS.slice().reverse().map(b=>`
+  <div class="book">
+    <div class="vote"><div class="n">${fmt(b.vote)}/10</div><div class="stars">${stars(b.vote)}</div></div>
+    <h3>${esc(b.title)}</h3>
+    <div class="meta">${esc(b.author)} · dal ${b.start} al ${b.end} · ${b.days} ${b.days===1?"giorno":"giorni"}</div>
+    ${b.note?`<p class="note">“${esc(b.note)}”</p>`:""}
+  </div>`).join("");
+const bars = (arr,val,max,lab) => arr.map(b=>`<div class="bar"><div class="l">${esc(b.title.length>28?b.title.slice(0,26)+"…":b.title)}</div><div class="t"><div class="f" style="width:${val(b)/max*100}%"></div></div><div class="v">${lab(b)}</div></div>`).join("");
+document.getElementById("rank").innerHTML = bars(BOOKS.slice().sort((a,b)=>b.vote-a.vote), b=>b.vote, 10, b=>fmt(b.vote));
+const maxD = Math.max(...BOOKS.map(b=>b.days));
+document.getElementById("days").innerHTML = bars(BOOKS, b=>b.days, maxD, b=>b.days+(b.days===1?" giorno":" giorni"));
+</script>
+</body>
+</html>
