@@ -56,15 +56,15 @@
   <footer>Tra parentesi l'anno di prima pubblicazione dell'opera. I giorni contano sia quello di inizio sia quello di fine. Voti in decimi; le stelle sono il voto diviso due, arrotondato per difetto.</footer>
 </main>
 <script>
-const UPDATED = "25 ottobre 2026";
+const UPDATED = "30 ottobre 2026";
 const READING = [
-  { title:"The Effective Executive (in inglese)", author:"Peter F. Drucker", year:1967, start:"25 ott" },
 ];
 const BOOKS = [
   { title:"Il cimitero di Praga", author:"Umberto Eco", year:2010, start:"10 ott", end:"17 ott", days:8, vote:8 },
   { title:"DiversaMente", author:"Immanuel Casto", year:2025, start:"18 ott", end:"20 ott", days:3, vote:6 },
   { title:"La sottile arte di fare quello che cazzo ti pare", author:"Mark Manson", year:2016, start:"21 ott", end:"24 ott", days:4, vote:6.5 },
   { title:"Il coraggio di provarci", author:"Cristina Scocchia & Francesca Gambarini", year:2024, start:"25 ott", end:"25 ott", days:1, vote:6.5 },
+  { title:"The Effective Executive (in inglese)", author:"Peter F. Drucker", year:1967, start:"25 ott", end:"30 ott", days:6, vote:7.5 },
 ];
 const fmt = n => String(n).replace(".", ",");
 const stars = v => { const s = Math.floor(v/2); return "★".repeat(s) + "☆".repeat(5-s); };
