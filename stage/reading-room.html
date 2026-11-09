@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <title>Reading Room / Cardux Books · Stage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f8f5ed">
+  <meta name="description" content="Cardux Books, un diario personale di lettura: libri Kindle, date, voti e statistiche.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="theme-room">
+  <a class="skip" href="#main">Vai al contenuto</a>
+  <header class="site-header wrap">
+    <a class="brand" href="https://cardux.it/" aria-label="House of Cardux">MC<span>.</span></a>
+    <span class="header-note">CARDUX BOOKS / AN EDITORIAL JOURNAL</span>
+    <nav class="header-nav" aria-label="Navigazione">
+      <a class="desktop-link" href="#library">La libreria</a>
+      <a class="desktop-link" href="#numbers">Statistiche</a>
+      <a class="switch-theme" href="./">Concept 01 / After Hours <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">01 / CARDUX BOOKS · DAL 2026</div>
+        <h1 class="hero-title" id="hero-title">La stanza<br><em>dei libri.</em></h1>
+        <p class="hero-tagline">Una libreria fatta di storie lette, giornate trascorse e nuove scoperte.</p>
+        <p class="hero-desc">Un inventario delle mie letture Kindle, con date, valutazioni e statistiche. Le copertine sono reinterpretazioni grafiche dei titoli che hanno attraversato il mio comodino.</p>
+        <div class="hero-links">
+          <a class="solid-link" href="#library">Sfoglia i libri <span aria-hidden="true">↘</span></a>
+          <a class="line-link" href="#numbers">Guarda le statistiche ↗</a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Libro attualmente in lettura">
+        <div class="top-rail"><span>IL SEGNALIBRO / LETTURA ATTUALE</span><span class="signal">● APERTO</span></div>
+        <div id="reading-panel" aria-live="polite">
+        <div class="reading-empty"><p>Caricamento della lettura in corso…</p></div>
+      </div>
+      <p id="reading-extra"></p>
+      </aside>
+    </section>
+  <section class="stats-band" aria-label="Statistiche di lettura">
+    <div class="wrap">
+      <p class="stats-intro">IL DIARIO IN QUATTRO NUMERI</p>
+      <div class="stats-grid">
+        <div class="stat"><strong class="stat-number" id="stat-books">06</strong><span class="stat-label">LIBRI FINITI</span></div>
+        <div class="stat"><strong class="stat-number" id="stat-days">27</strong><span class="stat-label">GIORNI DI LETTURA REGISTRATI</span></div>
+        <div class="stat"><strong class="stat-number" id="stat-rating">7,17</strong><span class="stat-label">VOTO MEDIO / 10</span></div>
+        <div class="stat"><strong class="stat-number" id="stat-pace">4,5</strong><span class="stat-label">GIORNI PER LIBRO IN MEDIA</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section wrap" id="library" aria-labelledby="library-title">
+    <div class="section-head">
+      <div><p class="section-eyebrow">02 / L'ARCHIVIO</p><h2 id="library-title">I libri <em>sullo scaffale.</em></h2></div>
+      <p>Un archivio personale, senza recensioni inventate. Date, autori, valutazioni e il tempo dedicato a ogni lettura.</p>
+    </div>
+    <div class="sort-bar">
+      <span class="sort-label">COLLEZIONE / <span id="count-books">06</span> TITOLI</span>
+      <div class="sort-group" role="group" aria-label="Ordina i libri">
+        <button type="button" data-sort="recent" aria-pressed="true">Più recenti</button>
+        <button type="button" data-sort="rating" aria-pressed="false">Voto</button>
+        <button type="button" data-sort="duration" aria-pressed="false">Durata</button>
+      </div>
+    </div>
+    <div class="book-grid" id="book-grid" aria-label="Libri completati"></div>
+  </section>
+  <section class="section wrap" id="numbers" aria-labelledby="numbers-title">
+    <div class="section-head">
+      <div><p class="section-eyebrow">03 / DIETRO I NUMERI</p><h2 id="numbers-title">Le letture <em>in numeri.</em></h2></div>
+      <p>Due modi per guardare gli stessi libri: il voto assegnato e i giorni impiegati per finirli.</p>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-head"><h3>Classifica per voto</h3><span>/ 10</span></div>
+        <div id="rating-chart" aria-label="Grafico dei voti"></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-head"><h3>Giorni per libro</h3><span>TEMPO</span></div>
+        <div id="duration-chart" aria-label="Grafico dei giorni di lettura"></div>
+      </div>
+    </div>
+    <p class="method-note">I giorni includono il giorno di inizio e quello di conclusione. Le medie si riferiscono ai soli libri completati. Le copertine sono composizioni grafiche originali ispirate ai titoli, non riproduzioni delle copertine editoriali.</p>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a class="footer-brand" href="https://cardux.it/">House of Cardux<span>.</span></a>
+        <nav class="footer-links" aria-label="Collegamenti nel footer">
+          <a href="https://cardux.it/">Home ↗</a>
+          <a href="https://cardux.it/projects/">The Lab ↗</a>
+          <a href="../">Books Library attuale ↗</a>
+          <a href="mailto:hello@cardux.it">Contatti ↗</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Cardux Books · Un diario di lettura personale.</span>
+        <span id="last-update">Aggiornato il 9 novembre 2026</span>
+      </div>
+    </div>
+  </footer>
+  <dialog id="book-dialog" aria-labelledby="modal-title" aria-describedby="modal-author">
+    <div class="modal-inner">
+      <div class="modal-cover" id="modal-cover" aria-hidden="true"></div>
+      <div class="modal-content">
+        <div class="modal-head"><span id="modal-eyebrow">LETTURA COMPLETATA</span>
+          <form method="dialog"><button class="modal-close" type="submit" aria-label="Chiudi i dettagli">×</button></form>
+        </div>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-author" id="modal-author"></p>
+        <div class="modal-details" id="modal-details"></div>
+      </div>
+    </div>
+  </dialog>
+  <script src="./library-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
