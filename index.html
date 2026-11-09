@@ -1,94 +1,123 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Books Library</title>
-<meta name="description" content="Il diario di lettura Kindle di Massimo Cardux: libri letti, giorni impiegati e voti.">
-<style>
-  :root { --bg:#faf7f2; --card:#fff; --ink:#2b2a28; --muted:#7a756d; --accent:#b5651d; --line:#ece6dc; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family: Georgia, "Times New Roman", serif; background:var(--bg); color:var(--ink); line-height:1.55; }
-  main { max-width:860px; margin:0 auto; padding:48px 20px 64px; }
-  h1 { font-size:2.4rem; margin:0 0 6px; letter-spacing:.5px; }
-  .sub { color:var(--muted); margin:0 0 36px; font-family: system-ui, sans-serif; font-size:.95rem; }
-  h2 { font-size:1.3rem; margin:40px 0 14px; border-bottom:1px solid var(--line); padding-bottom:6px; }
-  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
-  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
-  .stat b { display:block; font-size:1.8rem; color:var(--accent); }
-  .stat span { color:var(--muted); font-family:system-ui,sans-serif; font-size:.85rem; }
-  .book { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:12px; }
-  .book h3 { margin:0; font-size:1.15rem; }
-  .meta { color:var(--muted); font-family:system-ui,sans-serif; font-size:.88rem; margin-top:4px; }
-  .vote { float:right; text-align:right; }
-  .vote .n { font-size:1.4rem; font-weight:bold; color:var(--accent); }
-  .stars { color:#e0a526; letter-spacing:2px; font-size:1rem; }
-  .note { margin:10px 0 0; font-style:italic; }
-  .bar { display:flex; align-items:center; gap:10px; margin:8px 0; font-family:system-ui,sans-serif; font-size:.9rem; }
-  .bar .l { width:200px; flex-shrink:0; }
-  .bar .t { flex:1; background:var(--line); border-radius:6px; height:14px; overflow:hidden; }
-  .bar .f { background:var(--accent); height:100%; }
-  .bar .v { width:70px; text-align:right; color:var(--muted); }
-  .empty { color:var(--muted); font-style:italic; }
-  footer { margin-top:48px; color:var(--muted); font-family:system-ui,sans-serif; font-size:.8rem; text-align:center; }
-  @media (max-width:560px){ .bar .l{ width:120px; } .vote{ float:none; margin-top:8px; text-align:left; } }
-</style>
+  <title>Cardux Books | After Hours · Diario di lettura</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://hellocardux.github.io/books-library/">
+  <meta name="theme-color" content="#151c1b">
+  <meta name="description" content="Cardux Books, un diario personale di lettura: libri Kindle, date, voti e statistiche.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stage/styles.css">
 </head>
-<body>
-<main>
-  <h1>📚 Books Library</h1>
-  <p class="sub">Il mio diario di lettura su Kindle, dal 10 ottobre 2026. Aggiornato al <span id="updated"></span>.</p>
-
-  <div class="stats" id="stats"></div>
-
-  <h2>In lettura</h2>
-  <div id="reading"></div>
-
-  <h2>Libri finiti</h2>
-  <div id="books"></div>
-
-  <h2>Classifica per voto</h2>
-  <div id="rank"></div>
-
-  <h2>Giorni per libro</h2>
-  <div id="days"></div>
-
-  <footer>Tra parentesi l'anno di prima pubblicazione dell'opera. I giorni contano sia quello di inizio sia quello di fine. Voti in decimi; le stelle sono il voto diviso due, arrotondato per difetto.</footer>
-</main>
-<script>
-const UPDATED = "4 novembre 2026";
-const READING = [
-];
-const BOOKS = [
-  { title:"Il cimitero di Praga", author:"Umberto Eco", year:2010, start:"10 ott", end:"17 ott", days:8, vote:8 },
-  { title:"DiversaMente", author:"Immanuel Casto", year:2025, start:"18 ott", end:"20 ott", days:3, vote:6 },
-  { title:"La sottile arte di fare quello che cazzo ti pare", author:"Mark Manson", year:2016, start:"21 ott", end:"24 ott", days:4, vote:6.5 },
-  { title:"Il coraggio di provarci", author:"Cristina Scocchia & Francesca Gambarini", year:2024, start:"25 ott", end:"25 ott", days:1, vote:6.5 },
-  { title:"The Effective Executive (in inglese)", author:"Peter F. Drucker", year:1967, start:"25 ott", end:"30 ott", days:6, vote:7.5 },
-  { title:"1984", author:"George Orwell", year:1949, start:"31 ott", end:"4 nov", days:5, vote:8.5 },
-];
-const fmt = n => String(n).replace(".", ",");
-const stars = v => { const s = Math.floor(v/2); return "★".repeat(s) + "☆".repeat(5-s); };
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-document.getElementById("updated").textContent = UPDATED;
-const tot = BOOKS.reduce((a,b)=>a+b.days,0);
-const avgV = BOOKS.reduce((a,b)=>a+b.vote,0)/BOOKS.length;
-document.getElementById("stats").innerHTML = [
-  [BOOKS.length,"libri finiti"],[tot,"giorni di lettura"],[fmt(+(tot/BOOKS.length).toFixed(1)),"giorni in media"],[fmt(+avgV.toFixed(2)),"voto medio"]
-].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
-document.getElementById("reading").innerHTML = READING.length
-  ? READING.map(b=>`<div class="book"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} (${b.year}) · iniziato il ${b.start}</div></div>`).join("")
-  : `<p class="empty">Nessun libro in corso al momento.</p>`;
-document.getElementById("books").innerHTML = BOOKS.slice().reverse().map(b=>`
-  <div class="book">
-    <div class="vote"><div class="n">${fmt(b.vote)}/10</div><div class="stars">${stars(b.vote)}</div></div>
-    <h3>${esc(b.title)}</h3>
-    <div class="meta">${esc(b.author)} (${b.year}) · dal ${b.start} al ${b.end} · ${b.days} ${b.days===1?"giorno":"giorni"}</div>
-  </div>`).join("");
-const bars = (arr,val,max,lab) => arr.map(b=>`<div class="bar"><div class="l">${esc(b.title.length>28?b.title.slice(0,26)+"…":b.title)}</div><div class="t"><div class="f" style="width:${val(b)/max*100}%"></div></div><div class="v">${lab(b)}</div></div>`).join("");
-document.getElementById("rank").innerHTML = bars(BOOKS.slice().sort((a,b)=>b.vote-a.vote), b=>b.vote, 10, b=>fmt(b.vote));
-const maxD = Math.max(...BOOKS.map(b=>b.days));
-document.getElementById("days").innerHTML = bars(BOOKS, b=>b.days, maxD, b=>b.days+(b.days===1?" giorno":" giorni"));
-</script>
+<body class="theme-night">
+  <a class="skip" href="#main">Vai al contenuto</a>
+  <header class="site-header wrap">
+    <a class="brand" href="https://cardux.it/" aria-label="House of Cardux">MC<span>.</span></a>
+    <span class="header-note">CARDUX BOOKS / THE READING LOG</span>
+    <nav class="header-nav" aria-label="Navigazione">
+      <a class="desktop-link" href="#library">Libri</a>
+      <a class="desktop-link" href="#numbers">Statistiche</a>
+      <a class="switch-theme" href="./stage/reading-room.html">Concept 02 / Reading Room <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">01 / UN DIARIO DI LETTURA PERSONALE</div>
+        <h1 class="hero-title" id="hero-title">After<br><em>Hours.</em></h1>
+        <p class="hero-tagline">Ci sono libri che si chiudono. E idee che restano aperte.</p>
+        <p class="hero-desc">Quello che sto leggendo, quello che ho finito e qualche numero per ripercorrere il viaggio. Un piccolo spazio per tenere traccia delle mie letture su Kindle.</p>
+        <div class="hero-links">
+          <a class="solid-link" href="#library">Esplora la libreria <span aria-hidden="true">↘</span></a>
+          <a class="line-link" href="#numbers">I numeri delle letture ↗</a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Libro attualmente in lettura">
+        <div class="top-rail"><span>APERTA SUL COMODINO / 001</span><span class="signal">● IN CORSO</span></div>
+        <div id="reading-panel" aria-live="polite">
+        <div class="reading-empty"><p>Caricamento della lettura in corso…</p></div>
+      </div>
+      <p id="reading-extra"></p>
+      </aside>
+    </section>
+  <section class="stats-band" aria-label="Statistiche di lettura">
+    <div class="wrap">
+      <p class="stats-intro">IL DIARIO IN QUATTRO NUMERI</p>
+      <div class="stats-grid">
+        <div class="stat"><strong class="stat-number" id="stat-books">06</strong><span class="stat-label">LIBRI FINITI</span></div>
+        <div class="stat"><strong class="stat-number" id="stat-days">27</strong><span class="stat-label">GIORNI DI LETTURA REGISTRATI</span></div>
+        <div class="stat"><strong class="stat-number" id="stat-rating">7,17</strong><span class="stat-label">VOTO MEDIO / 10</span></div>
+        <div class="stat"><strong class="stat-number" id="stat-pace">4,5</strong><span class="stat-label">GIORNI PER LIBRO IN MEDIA</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section wrap" id="library" aria-labelledby="library-title">
+    <div class="section-head">
+      <div><p class="section-eyebrow">02 / L'ARCHIVIO</p><h2 id="library-title">Libri <em>finiti.</em></h2></div>
+      <p>Un archivio personale, senza recensioni inventate. Date, autori, valutazioni e il tempo dedicato a ogni lettura.</p>
+    </div>
+    <div class="sort-bar">
+      <span class="sort-label">COLLEZIONE / <span id="count-books">06</span> TITOLI</span>
+      <div class="sort-group" role="group" aria-label="Ordina i libri">
+        <button type="button" data-sort="recent" aria-pressed="true">Più recenti</button>
+        <button type="button" data-sort="rating" aria-pressed="false">Voto</button>
+        <button type="button" data-sort="duration" aria-pressed="false">Durata</button>
+      </div>
+    </div>
+    <div class="book-grid" id="book-grid" aria-label="Libri completati"></div>
+  </section>
+  <section class="section wrap" id="numbers" aria-labelledby="numbers-title">
+    <div class="section-head">
+      <div><p class="section-eyebrow">03 / DIETRO I NUMERI</p><h2 id="numbers-title">Il ritmo <em>delle letture.</em></h2></div>
+      <p>Due modi per guardare gli stessi libri: il voto assegnato e i giorni impiegati per finirli.</p>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-head"><h3>Classifica per voto</h3><span>/ 10</span></div>
+        <div id="rating-chart" aria-label="Grafico dei voti"></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-head"><h3>Giorni per libro</h3><span>TEMPO</span></div>
+        <div id="duration-chart" aria-label="Grafico dei giorni di lettura"></div>
+      </div>
+    </div>
+    <p class="method-note">I giorni includono il giorno di inizio e quello di conclusione. Le medie si riferiscono ai soli libri completati. Le copertine sono composizioni grafiche originali ispirate ai titoli, non riproduzioni delle copertine editoriali.</p>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a class="footer-brand" href="https://cardux.it/">House of Cardux<span>.</span></a>
+        <nav class="footer-links" aria-label="Collegamenti nel footer">
+          <a href="https://cardux.it/">Home ↗</a>
+          <a href="https://cardux.it/projects/">The Lab ↗</a>
+          <a href="./archive/2026-11-09/">Versione precedente ↗</a>
+          <a href="mailto:hello@cardux.it">Contatti ↗</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Cardux Books · Un diario di lettura personale.</span>
+        <span id="last-update">Aggiornato il 9 novembre 2026</span>
+      </div>
+    </div>
+  </footer>
+  <dialog id="book-dialog" aria-labelledby="modal-title" aria-describedby="modal-author">
+    <div class="modal-inner">
+      <div class="modal-cover" id="modal-cover" aria-hidden="true"></div>
+      <div class="modal-content">
+        <div class="modal-head"><span id="modal-eyebrow">LETTURA COMPLETATA</span>
+          <form method="dialog"><button class="modal-close" type="submit" aria-label="Chiudi i dettagli">×</button></form>
+        </div>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-author" id="modal-author"></p>
+        <div class="modal-details" id="modal-details"></div>
+      </div>
+    </div>
+  </dialog>
+  <script src="./stage/library-data.js"></script>
+  <script src="./stage/app.js"></script>
 </body>
 </html>
