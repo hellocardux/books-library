@@ -76,6 +76,8 @@ L'utente approva esplicitamente la pagina. Solo dopo si copiano le risorse nell'
 - Navigazione e capitoli devono derivare dal contenuto, non da elenchi hardcoded.
 - Il CTA **Approfondimento** nella card appare solo se `bookId` è presente nel catalogo; lo stesso vale per la scheda del libro sul comodino.
 - Conservare `analysis.md` come sorgente. Non trattare l'HTML renderizzato come testo principale da correggere a mano.
+- **Voce editoriale delle Reading Notes:** seguire `Guida_Analisi_Libri_EPUB.md` con analisi fedele, capitoli, modelli, critica e ripasso; presentare separatamente affermazioni dell'autore, esempi originali e interpretazioni. Le regole di prima persona e ironia di `regole-scrittura-cardux-notes.md` riguardano gli articoli personali del blog e non si applicano automaticamente alle Reading Notes. Non trasformare una guida di studio approvata in un saggio personale senza una richiesta esplicita.
+
 
 ## 5. Checklist di validazione
 
