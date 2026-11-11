@@ -14,7 +14,7 @@
       "description": "Una guida ragionata al dialogo quando le opinioni divergono, le emozioni crescono e le conseguenze contano. Tredici capitoli, modelli, lettura critica e strumenti per ricordare.",
       "chapters": 13,
       "sections": 7,
-      "readingStatus": "In lettura",
+      "readingStatus": "Terminato",
       "label": "READING NOTES / 001",
       "updated": "2026-11-11",
       "status": "preview",
@@ -49,7 +49,10 @@
           "text": "Azioni",
           "anchor": "capitolo-5"
         }
-      ]
+      ],
+      "finished": "2026-11-11",
+      "rating": 5,
+      "ratingStars": 2.5
     },
     {
       "slug": "effective-executive",

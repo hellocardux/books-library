@@ -8,8 +8,10 @@
    An editionLabel can specify the edition actually being read.
 */
 window.CARDUX_BOOKS = {
-  updated: "2026-11-09",
+  updated: "2026-11-11",
   reading: [
+  ],
+  finished: [
     {
       id: "conversazioni-cruciali",
       title: "Conversazioni cruciali",
@@ -18,11 +20,10 @@ window.CARDUX_BOOKS = {
       year: 2002,
       editionLabel: "ROI Edizioni · edizione italiana 2024",
       started: "2026-11-07",
-      sourceUrl: "https://www.roiedizioni.it/prodotto/libri/conversazioni-cruciali/",
-      cover: { bg:"#8e3c32", ink:"#fff4e6", accent:"#f3b18c", motif:"dialogue" }
-    }
-  ],
-  finished: [
+      cover: { bg:"#8e3c32", ink:"#fff4e6", accent:"#f3b18c", motif:"dialogue" },
+      finished: "2026-11-11",
+      rating: 5
+    },
     {
       id: "cimitero-praga",
       title: "Il cimitero di Praga",
