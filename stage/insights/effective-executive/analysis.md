@@ -257,7 +257,3 @@ Insomma, il contributo di Drucker sta anche nell'obbligarci a scegliere. Una gio
 
 - Peter F. Drucker, *[The Effective Executive: The Definitive Guide to Getting the Right Things Done](https://www.harvard.com/book/9780062574343)*, Harper Business, edizione del cinquantenario, 2017 (prima edizione 1967). Prefazione di Jim Collins e postfazione di Zachary First.
 - Le osservazioni in prima persona, i parallelismi con gli strumenti aziendali attuali e le valutazioni critiche sono interpretazioni editoriali. Gli esempi storici attribuiti a Drucker provengono dal libro.
-
-**Categoria:** Lavoro & Management. **Tag:** management, leadership, decisioni, produttività.
-
-**Titoli alternativi, come proposte editoriali:** *Il calendario è pieno: il conto lo pagano le priorità*; *Il lavoro che resta dopo l'ultima riunione*; *A cosa serve davvero un manager?*
