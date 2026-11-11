@@ -1,7 +1,7 @@
 {
   "version": 1,
   "collection": "After Hours / Reading Notes",
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "items": [
     {
       "slug": "conversazioni-cruciali",
@@ -99,6 +99,57 @@
           "label": "DECISIONI",
           "text": "Agire",
           "anchor": "capitolo-6"
+        }
+      ]
+    },
+    {
+      "slug": "diversamente",
+      "bookId": "diversamente",
+      "title": "DiversaMente",
+      "subtitle": "Capirsi è difficile. Possiamo almeno imparare a provarci.",
+      "author": "Immanuel Casto",
+      "year": 2025,
+      "field": "Psicologia · Comunicazione · Relazioni",
+      "description": "Dalla presunzione di capire gli altri all'arte di comunicare, accettare i rifiuti e aver cura dei legami. Ventisei capitoli, dieci idee fondamentali, lettura critica e ripasso.",
+      "chapters": 26,
+      "sections": 7,
+      "readingStatus": "Terminato",
+      "label": "READING NOTES / 003",
+      "updated": "2026-11-12",
+      "status": "preview",
+      "ideas": 10,
+      "remember": 20,
+      "heroLead": "Diversa",
+      "heroEmphasis": "Mente.",
+      "coverLines": [
+        "Diversa",
+        "Mente."
+      ],
+      "coverTagline": "I rapporti umani, senza istruzioni.",
+      "editionLabel": "Bompiani · 2025",
+      "finished": "2026-10-20",
+      "rating": 6,
+      "ratingStars": 3,
+      "framework": [
+        {
+          "label": "COMPRENDERE",
+          "text": "I limiti",
+          "anchor": "capitolo-1"
+        },
+        {
+          "label": "COMUNICARE",
+          "text": "Le parole",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "CONFRONTARSI",
+          "text": "Le scelte",
+          "anchor": "capitolo-12"
+        },
+        {
+          "label": "COLTIVARE",
+          "text": "I legami",
+          "anchor": "capitolo-26"
         }
       ]
     }
