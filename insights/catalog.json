@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "collection": "After Hours / Reading Notes",
+  "updated": "2026-11-11",
+  "items": [
+    {
+      "slug": "effective-executive",
+      "bookId": "effective-executive",
+      "title": "The Effective Executive",
+      "subtitle": "Un classico del management visto dalla parte delle agende piene e delle decisioni difficili.",
+      "author": "Peter F. Drucker",
+      "year": 1967,
+      "field": "Management · Decisioni · Leadership",
+      "description": "Ho riletto le cinque pratiche di Drucker pensando alle call interminabili, alle priorità che si accumulano e ai risultati che facciamo fatica a riconoscere. La questione più scomoda riguarda ciò che scegliamo di continuare a fare.",
+      "chapters": 7,
+      "sections": 7,
+      "readingStatus": "Terminato",
+      "label": "READING NOTES / 002",
+      "updated": "2026-11-11",
+      "status": "published",
+      "ideas": 10,
+      "remember": 20,
+      "heroLead": "The Effective",
+      "heroEmphasis": "Executive.",
+      "coverLines": [
+        "The Effective",
+        "Executive."
+      ],
+      "coverTagline": "Quello che resta dopo l'ultima riunione.",
+      "editionLabel": "1967 · Edizione del cinquantenario, 2017",
+      "framework": [
+        {
+          "label": "TEMPO",
+          "text": "Conoscere",
+          "anchor": "capitolo-2"
+        },
+        {
+          "label": "CONTRIBUTO",
+          "text": "Orientare",
+          "anchor": "capitolo-3"
+        },
+        {
+          "label": "PRIORITÀ",
+          "text": "Concentrare",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "DECISIONI",
+          "text": "Agire",
+          "anchor": "capitolo-6"
+        }
+      ],
+      "category": "Lavoro & Management",
+      "tags": [
+        "management",
+        "leadership",
+        "decisioni",
+        "produttività"
+      ],
+      "alternativeTitles": [
+        "Il calendario è pieno: il conto lo pagano le priorità",
+        "Il lavoro che resta dopo l'ultima riunione",
+        "A cosa serve davvero un manager?"
+      ]
+    }
+  ]
+}
