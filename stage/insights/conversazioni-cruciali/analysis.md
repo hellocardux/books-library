@@ -4,10 +4,10 @@
 **Autori:** Joseph Grenny, Kerry Patterson, Ron McMillan, Al Switzler, Emily Gregory  
 **Edizione consultata:** ROI Edizioni, 2024, traduzione di Valentina Muccichini  
 **Sottotitolo:** *Strumenti per dialogare meglio quando la posta in gioco è alta*  
-**Testo analizzato:** EPUB fornito, incluse prefazione italiana, prefazione, capitoli 1–13, introduzioni alle tre parti e conclusione.  
+**Testo analizzato:** edizione italiana del libro consultata, incluse prefazione italiana, prefazione, capitoli 1–13, introduzioni alle tre parti e conclusione.  
 **Genere:** manuale di comunicazione interpersonale, leadership, gestione delle relazioni e dei conflitti.
 
-> **Metodo di lettura della guida.** Le ricostruzioni presentate come *tesi degli autori* si basano sul libro. Gli esempi con i nomi Kevin, Wendy, Maria e Louis, Greta, Anita e Amber, Oba e Mari, Sanj, Marlin e la sorella che discute dell'eredità sono casi narrati nell'EPUB e qui riassunti. Gli esempi ambientati in un'Academy, in un team o in una rete dealer sono mie applicazioni didattiche, non episodi attribuiti agli autori. Le valutazioni critiche sono interpretazioni autonome, non verifiche bibliografiche esterne. I rimandi ai capitoli sostituiscono numeri di pagina, non stabili nel formato EPUB.
+> **Metodo di lettura della guida.** Le ricostruzioni presentate come *tesi degli autori* si basano sul libro. Gli esempi con i nomi Kevin, Wendy, Maria e Louis, Greta, Anita e Amber, Oba e Mari, Sanj, Marlin e la sorella che discute dell'eredità sono casi narrati nel libro e qui riassunti. Gli esempi ambientati in un'Academy, in un team o in una rete dealer sono mie applicazioni didattiche, non episodi attribuiti agli autori. Le valutazioni critiche sono interpretazioni autonome, non verifiche bibliografiche esterne. I rimandi ai capitoli sostituiscono numeri di pagina, non stabili tra le diverse edizioni.
 
 ---
 
@@ -474,7 +474,7 @@ La conclusione riprende la motivazione iniziale della ricerca: gli autori non vo
 
 **Le organizzazioni sono sistemi, non solo relazioni.** La sicurezza psicologica di un team dipende anche da incentivi, obiettivi, politiche di valutazione, carichi di lavoro, gerarchie e protezioni contro le ritorsioni. Un manager può applicare le tecniche e continuare a ricevere silenzio se il sistema punisce chi segnala problemi.
 
-**La generalizzabilità dei casi resta da valutare.** Gli autori richiamano ricerche e decenni di osservazione; l'EPUB non è una revisione sistematica indipendente degli studi. I casi narrativi illustrano meccanismi possibili, ma non dimostrano da soli l'efficacia universale dei singoli strumenti. Per dichiarare quantitativamente l'efficacia del metodo servirebbe verificare la metodologia delle ricerche citate.
+**La generalizzabilità dei casi resta da valutare.** Gli autori richiamano ricerche e decenni di osservazione; il libro non è una revisione sistematica indipendente degli studi. I casi narrativi illustrano meccanismi possibili, ma non dimostrano da soli l'efficacia universale dei singoli strumenti. Per dichiarare quantitativamente l'efficacia del metodo servirebbe verificare la metodologia delle ricerche citate.
 
 **Il dialogo non sostituisce le tutele.** Le tecniche sono meno adatte come unico intervento quando esistono intimidazione, discriminazione, molestie o rischio di violenza. Gli stessi autori indicano l'intervento delle risorse umane nelle situazioni appropriate. L'utilizzatore deve dunque distinguere fra conflitto negoziabile e violazione che richiede protezione formale.
 

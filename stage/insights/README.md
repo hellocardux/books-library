@@ -38,3 +38,10 @@ Tutte le pagine nuove hanno `noindex,nofollow`.
 - `<slug>/index.html`: pagina di lettura statica
 
 **Nota:** per la prima monografia abbiamo generato l'HTML a partire dal Markdown, conservando l'intera analisi eccetto la sezione dedicata al laboratorio.
+## Interfaccia di collegamento alle analisi (stage)
+
+- La homepage stage carica `stage/app-preview.js`, copia isolata del renderer: la produzione continua a usare `stage/app.js`.
+- `catalog.js` passa le analisi disponibili al renderer tramite `window.CARDUX_STAGE_SET_INSIGHTS(items, prefix)`. La scheda della lettura in corso riceve il collegamento all'analisi; le card dei libri finiti mostrano un'azione **Approfondimento** accanto a **Dettagli**, soltanto per i titoli con una scheda nel catalogo.
+- Le card hanno due controlli HTML separati (`button` per i dettagli e `a` per l'approfondimento), evitando link annidati nei pulsanti.
+- Lo stato della lettura e le statistiche rimangono governati da `stage/library-data.js`. Non si deducono voti né date dal catalogo.
+- I riferimenti tecnici al formato del file originale restano fuori dalle pagine destinate ai lettori.
