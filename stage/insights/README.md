@@ -1,47 +1,45 @@
-# After Hours / Reading Notes — Stage
+# Reading Notes | Stage e generatore
 
-La collezione delle analisi approfondite vive **solo in `stage/insights/`**. La homepage in produzione (`/index.html`) e i file condivisi (`stage/app.js`, `stage/styles.css`, `stage/library-data.js`) non sono stati modificati.
+La homepage pubblica non è modificata da questa pipeline. L'articolo pilota **Conversazioni cruciali** conserva la sua versione HTML già approvata: `--check` ne verifica titolo, capitoli e noindex. Per rigenerarlo dal template condiviso usare `--write --slug conversazioni-cruciali`, valutando prima il risultato sullo staging.
 
-## Pagine di anteprima
-- Homepage After Hours: `/stage/`
-- Indice Reading Notes: `/stage/insights/`
-- Conversazioni cruciali: `/stage/insights/conversazioni-cruciali/`
+## Nuovo libro
 
-Tutte le pagine nuove hanno `noindex,nofollow`.
+1. Avvia una chat dedicata nel progetto **Book Partner**, analizza il testo e approva il contenuto.
+2. Salva la guida completa in `stage/insights/<slug>/analysis.md`. Scrivi `# Titolo`, poi almeno due grandi sezioni `# I. ...` e `# II. ...`; per i capitoli numerati usa `## Capitolo N | Titolo`. Per narrativa adatta le sezioni al genere.
+3. Aggiungi un elemento in `stage/insights/catalog.json` con `slug`, `bookId`, `title`, `author`, `description`, `chapters` e `status: "preview"`. Il `bookId` deve coincidere con `id` in `stage/library-data.js`.
+4. Genera l'HTML e verifica il catalogo:
 
-## Convenzione per tutti i libri
-1. Analizzare l'EPUB con la guida `Guida_Analisi_Libri_EPUB.md`; distinguere fonte, interpretazioni e esempi didattici.
-2. Conservare l'analisi completa in `stage/insights/<slug>/analysis.md`; non includere laboratori personali salvo richiesta.
-3. Aggiungere una voce in `stage/insights/catalog.json` con `slug`, `bookId`, `title`, `author`, `description`, `chapters`, `status`.
-4. Generare la pagina HTML con il template del sito; riutilizzare `assets/article.css` e `assets/article.js` per tutte le pagine.
-5. Validare integrità e qualità: tutti i capitoli presenti, ancore funzionanti, tabelle visibili su mobile, metadati, accessibilità, contenuti non duplicati, nessun materiale del libro riprodotto integralmente.
-6. Solo dopo l'approvazione copiare le pagine da `/stage/insights/` a `/insights/`, aggiornare i link della homepage in produzione, e poi indicizzare se desiderato.
+```bash
+python -m pip install -r stage/insights/requirements.txt
+python stage/insights/build.py --write --slug <slug>
+python stage/insights/build.py --check
+```
 
-## Fonte unica del catalogo
-`catalog.json` alimenta sia il pannello **Reading Notes** nella homepage stage sia il relativo indice, tramite `assets/catalog.js`. I collegamenti del libro in lettura sono ricavati automaticamente tramite `bookId`.
+5. Controlla la pagina in staging, i collegamenti nelle card, indice, tabelle, leggibilità mobile e stampa. Richiedi sempre approvazione prima della produzione.
 
-## Regole redazionali
-- Nessun laboratorio personalizzato nel testo pubblico, salvo richiesta espressa.
-- Rispettare la struttura dell'edizione EPUB realmente fornita, anche se cambia fra edizioni.
-- Attribuire modelli e casi correttamente agli autori; separare sempre i commenti critici.
-- Niente date di fine lettura e voti dedotti: il reading log resta invariato finché il lettore non li specifica.
-- Markdown sorgente conservato per rigenerare pagina e versioni Kindle/PDF, senza pubblicare l'EPUB protetto.
-- Tono editoriale informativo; template comune, colori copertina e grafica personalizzabili per libro.
+## Struttura
 
-## File aggiunti
-- `catalog.json`: metadati dei libri con approfondimento
-- `assets/article.css`: design editoriale e versione stampabile
-- `assets/article.js`: indice, avanzamento, navigazione e stampa
-- `assets/catalog.js`: schede generate dal catalogo
-- `assets/preview-home.css`: integrazione esclusiva nella homepage stage
-- `<slug>/analysis.md`: testo sorgente integrale
-- `<slug>/index.html`: pagina di lettura statica
+- `stage/insights/build.py`: generatore statico (Python 3.12+).
+- `stage/insights/requirements.txt`: renderer Markdown con versione bloccata.
+- `stage/insights/templates/article.html`: unico template di pagina.
+- `stage/insights/assets/article.css`: design condiviso.
+- `stage/insights/assets/article.js`: indice e navigazione dinamici.
+- `stage/insights/catalog.json`: metadati e link delle analisi.
+- `stage/insights/<slug>/analysis.md`: testo fonte.
+- `stage/insights/<slug>/index.html`: pagina generata.
 
-**Nota:** per la prima monografia abbiamo generato l'HTML a partire dal Markdown, conservando l'intera analisi eccetto la sezione dedicata al laboratorio.
-## Interfaccia di collegamento alle analisi (stage)
+Il generatore valida conteggi, duplicati e riferimenti tecnici inopportuni. `--check` è utilizzato anche dalla GitHub Action di validazione.
 
-- La homepage stage carica `stage/app-preview.js`, copia isolata del renderer: la produzione continua a usare `stage/app.js`.
-- `catalog.js` passa le analisi disponibili al renderer tramite `window.CARDUX_STAGE_SET_INSIGHTS(items, prefix)`. La scheda della lettura in corso riceve il collegamento all'analisi; le card dei libri finiti mostrano un'azione **Approfondimento** accanto a **Dettagli**, soltanto per i titoli con una scheda nel catalogo.
-- Le card hanno due controlli HTML separati (`button` per i dettagli e `a` per l'approfondimento), evitando link annidati nei pulsanti.
-- Lo stato della lettura e le statistiche rimangono governati da `stage/library-data.js`. Non si deducono voti né date dal catalogo.
-- I riferimenti tecnici al formato del file originale restano fuori dalle pagine destinate ai lettori.
+## Collegamento ai libri
+
+L'elenco degli approfondimenti deriva dal catalogo. `stage/app-preview.js` riceve `window.CARDUX_STAGE_SET_INSIGHTS(items,prefix)` da `stage/insights/assets/catalog.js`. L'azione **Approfondimento** compare solo se esiste la pagina relativa al `bookId`. Le date, i voti e lo stato di lettura restano in `stage/library-data.js`.
+
+## Staging e produzione
+
+- Homepage: https://hellocardux.github.io/books-library/stage/
+- Indice: https://hellocardux.github.io/books-library/stage/insights/
+- Libro: `https://hellocardux.github.io/books-library/stage/insights/<slug>/`
+
+Le pagine stage usano `noindex,nofollow`, ma sono raggiungibili pubblicamente attraverso un link. La promozione in produzione richiede una conferma esplicita dell'utente e la verifica dei percorsi degli asset e dei link.
+
+L'intero flusso, i prompt riutilizzabili e la checklist redazionale sono in [Workflow_Cardux_Books.md](../../Workflow_Cardux_Books.md) nella radice del repository.

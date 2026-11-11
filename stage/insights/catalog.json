@@ -17,7 +17,39 @@
       "readingStatus": "In lettura",
       "label": "READING NOTES / 001",
       "updated": "2026-11-11",
-      "status": "preview"
+      "status": "preview",
+      "ideas": 10,
+      "remember": 20,
+      "heroLead": "Conversazioni",
+      "heroEmphasis": "cruciali.",
+      "coverLines": [
+        "Conversazioni",
+        "cruciali."
+      ],
+      "coverTagline": "Quando la posta in gioco è alta.",
+      "editionLabel": "ROI Edizioni, 2024",
+      "framework": [
+        {
+          "label": "OSSERVARE",
+          "text": "Fatti",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "INTERPRETARE",
+          "text": "Storie",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "PROVARE",
+          "text": "Emozioni",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "REAGIRE",
+          "text": "Azioni",
+          "anchor": "capitolo-5"
+        }
+      ]
     }
   ]
 }

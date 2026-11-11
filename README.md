@@ -28,3 +28,8 @@ Per esempi e dettagli consulta [stage/README.md](stage/README.md).
 ## Struttura tecnica
 
 HTML, CSS e JavaScript statico, senza database, abbonamenti o build. `stage/app.js` genera pagine e grafici; `stage/styles.css` contiene entrambi i temi e `stage/library-data.js` è l'unica fonte dei dati.
+
+
+## Reading Notes | Approfondimenti dei libri
+
+Lavorazione in staging tramite template condiviso e generatore statico. Procedura e prompt sono descritti in [Workflow_Cardux_Books.md](Workflow_Cardux_Books.md). Comandi in [stage/insights/README.md](stage/insights/README.md).
