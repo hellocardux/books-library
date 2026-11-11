@@ -26,6 +26,16 @@ Drucker indica quattro pressioni che complicano la vita di chi lavora: gli altri
 
 In questa prospettiva, l'efficacia richiede anche organizzazioni che sappiano proteggere il tempo, rendere chiare le responsabilità e ascoltare ciò che accade fuori dalle proprie stanze. Caricare ogni difficoltà sulle spalle del singolo sarebbe comodo, soprattutto per chi disegna gli organigrammi, ma piuttosto poco serio.
 
+## Le otto pratiche dell'introduzione
+
+Drucker apre l'edizione con un testo nel quale rende ancora più concreta la sua idea di efficacia. Chiede di capire che cosa debba essere fatto e che cosa sia giusto per l'organizzazione; di preparare un piano d'azione e assumersi la responsabilità delle decisioni; di comunicare con chiarezza e dedicare attenzione alle opportunità; di rendere produttive le riunioni e parlare in termini di «noi». Aggiunge il consiglio di ascoltare prima di intervenire, dettaglio poco spettacolare per chi ama essere la prima voce in ogni call.
+
+Trovo utile leggere queste otto pratiche insieme ai cinque pilastri dei capitoli, perché mostrano quanto lavoro debba avvenire dopo aver individuato una buona idea. Un piano richiede verifiche, una decisione richiede responsabilità e una riunione dovrebbe lasciare a qualcuno qualcosa di sensato da fare. Drucker cita Harry Truman per ricordare che le esigenze del ruolo possono chiedere attenzione a questioni diverse da quelle che preferiremmo affrontare.
+
+## Le voci aggiunte all'edizione del cinquantenario
+
+Nella prefazione Jim Collins rilegge gli insegnamenti di Drucker attraverso dieci lezioni personali, che comprendono la gestione di sé, l'attenzione ai punti di forza e l'abbandono del lavoro improduttivo. La postfazione di Zachary First insiste sulla responsabilità di trasformare queste idee in comportamenti, richiamando anche il caso dell'organizzazione Edward Jones. Considero questi contributi una cornice successiva: aiutano a interpretare l'opera, ma non vanno confusi con le classificazioni originali dell'autore.
+
 # II. Dieci idee che mi porto dietro
 
 ## 1. L'efficacia è un'abitudine che si costruisce
