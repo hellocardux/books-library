@@ -55,11 +55,11 @@
       "slug": "effective-executive",
       "bookId": "effective-executive",
       "title": "The Effective Executive",
-      "subtitle": "L'efficacia non è un talento. È una disciplina che si apprende.",
+      "subtitle": "Un classico del management visto dalla parte delle agende piene e delle decisioni difficili.",
       "author": "Peter F. Drucker",
       "year": 1967,
       "field": "Management · Decisioni · Leadership",
-      "description": "Una guida approfondita alle cinque pratiche dell'efficacia: tempo, contributo, punti di forza, priorità e decisioni. Sette capitoli, dieci idee fondamentali, analisi critica e ripasso.",
+      "description": "Ho riletto le cinque pratiche di Drucker pensando alle call interminabili, alle priorità che si accumulano e ai risultati che facciamo fatica a riconoscere. La questione più scomoda riguarda ciò che scegliamo di continuare a fare.",
       "chapters": 7,
       "sections": 7,
       "readingStatus": "Terminato",
@@ -74,7 +74,7 @@
         "The Effective",
         "Executive."
       ],
-      "coverTagline": "Fare le cose che contano.",
+      "coverTagline": "Quello che resta dopo l'ultima riunione.",
       "editionLabel": "1967 · Edizione del cinquantenario, 2017",
       "framework": [
         {
@@ -97,6 +97,18 @@
           "text": "Agire",
           "anchor": "capitolo-6"
         }
+      ],
+      "category": "Lavoro & Management",
+      "tags": [
+        "management",
+        "leadership",
+        "decisioni",
+        "produttività"
+      ],
+      "alternativeTitles": [
+        "Il calendario è pieno: il conto lo pagano le priorità",
+        "Il lavoro che resta dopo l'ultima riunione",
+        "A cosa serve davvero un manager?"
       ]
     }
   ]
