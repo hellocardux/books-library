@@ -16,7 +16,7 @@ Il ragionamento è particolarmente rilevante per il *knowledge work*, il lavoro 
 
 La vita organizzativa, però, tende a rendere le persone inefficaci. L'agenda viene conquistata da richieste altrui; le urgenze prendono il posto delle priorità; i risultati dipendono da collaborazioni fuori dal controllo gerarchico; l'attenzione si concentra sui processi interni più che sugli effetti esterni. Drucker interpreta questa condizione come una proprietà strutturale del lavoro organizzato, che richiede disciplina intenzionale.
 
-La soluzione è costruita attorno a cinque pratiche. **Conoscere il tempo** significa registrarne l'impiego effettivo, rimuovere sprechi e proteggere intervalli continui. **Orientarsi al contributo** vuol dire chiedere quali risultati siano necessari, oltre le attività associate al proprio ruolo. **Rendere produttivi i punti di forza** richiede di assegnare persone e competenze dove possono generare prestazioni elevate. **Concentrarsi sulle priorità** comporta scegliere anche ciò che non verrà fatto. **Prendere decisioni efficaci**, infine, significa diagnosticare correttamente il problema, definire condizioni indispensabili, confrontare alternative, tradurre la scelta in azione e verificare gli effetti.
+La soluzione è costruita attorno a cinque pratiche. **Conoscere il tempo** significa registrarne l'impiego effettivo, rimuovere sprechi e proteggere intervalli continui. **Orientarsi al contributo** vuol dire chiedere quali risultati siano necessari, oltre le attività associate al proprio ruolo. **Rendere produttivi i punti di forza** richiede di assegnare persone e competenze dove possono generare prestazioni elevate. **Concentrarsi sulle priorità** comporta scegliere anche le attività da escludere. **Prendere decisioni efficaci**, infine, significa diagnosticare correttamente il problema, definire condizioni indispensabili, confrontare alternative, tradurre la scelta in azione e verificare gli effetti.
 
 Le pratiche sono interdipendenti. Il tempo disponibile sostiene il lavoro importante quando una definizione chiara del contributo ne guida l'impiego. I punti di forza generano valore soltanto se sono orientati a finalità chiare. Le priorità richiedono rinunce, e le decisioni rendono operative queste scelte.
 
@@ -54,7 +54,7 @@ Le persone sono inevitabilmente diseguali nelle loro capacità. Cercare individu
 
 ## 6. Una priorità implica una rinuncia
 
-Le attività possibili superano sempre le risorse disponibili. La concentrazione richiede di scegliere le priorità e le attività da escludere deliberatamente: le *posteriorities*. È spesso una scelta difficile perché ogni progetto ha sostenitori e una propria storia. **Importanza:** rende possibile l'allocazione delle risorse verso pochi risultati significativi. **Esempio originale:** Drucker richiama la capacità di DuPont di abbandonare prodotti e processi non più promettenti per liberare risorse verso nuove opportunità.
+Le attività possibili superano sempre le risorse disponibili. La concentrazione richiede di scegliere le priorità e le attività da escludere deliberatamente: le *posteriorities*. È spesso una scelta difficile perché ogni progetto ha sostenitori e una propria storia. **Importanza:** rende possibile l'allocazione delle risorse verso pochi risultati significativi. **Esempio originale:** Drucker richiama la capacità di DuPont di abbandonare prodotti e processi con prospettive ormai esaurite per liberare risorse verso nuove opportunità.
 
 ## 7. Le opportunità creano risultati nuovi
 
@@ -219,7 +219,7 @@ L'ultima domanda valuta affidabilità e integrità insieme alla prestazione tecn
 
 ### Gli esempi storici
 
-**Abraham Lincoln e Ulysses S. Grant:** Lincoln affida un compito decisivo a un generale dotato di capacità militari rilevanti, pur consapevole di limiti personali. **George C. Marshall:** valuta e assegna gli ufficiali in funzione delle capacità dimostrate. Drucker richiama George Patton come esempio di talento operativo con debolezze non trascurabili e Dwight Eisenhower come esempio di sviluppo attraverso incarichi appropriati.
+**Abraham Lincoln e Ulysses S. Grant:** Lincoln affida un compito decisivo a un generale dotato di capacità militari rilevanti, pur consapevole di limiti personali. **George C. Marshall:** valuta e assegna gli ufficiali in funzione delle capacità dimostrate. Drucker richiama George Patton come esempio di talento operativo con debolezze rilevanti e Dwight Eisenhower come esempio di sviluppo attraverso incarichi appropriati.
 
 La responsabilità della nomina prosegue dopo la selezione. Un incarico sbagliato può dipendere anche da chi lo ha costruito o assegnato.
 
@@ -399,7 +399,7 @@ La postfazione di **Zachary First** insiste su punti di forza, contributo oltre 
 | Making strength productive | Impiego delle capacità distintive | Cap. 4 | Orienta people management | Assegnare ruoli pertinenti |
 | Impossible job | Incarico con requisiti incongruenti | Cap. 4 | Spiega insuccessi ricorrenti | Riprogettare posizioni |
 | Concentration | Scelta di poche attività significative | Cap. 5 | Evita dispersione | Limitare iniziative parallele |
-| Posteriority | Attività esclusa dalle priorità attuali | Cap. 5 | Libera risorse | Decidere cosa non fare |
+| Posteriority | Attività esclusa dalle priorità attuali | Cap. 5 | Libera risorse | Decidere quali attività escludere |
 | Generic decision | Principio per una categoria di problemi | Cap. 6 | Riduce correzioni ripetute | Definire regole generali |
 | Boundary conditions | Requisiti che una decisione deve soddisfare | Cap. 6 | Filtra le soluzioni | Stabilire vincoli essenziali |
 | Decision feedback | Verifica successiva della scelta | Cap. 6 | Consente correzione | Confrontare esiti e ipotesi |
@@ -476,7 +476,7 @@ Il modello presuppone che le persone abbiano un margine reale di controllo sul p
 
 ## Questioni aperte
 
-Come attribuire risultati complessi a singoli contributi? Come bilanciare interessi economici, sociali e di sviluppo quando entrano in tensione? Quando interrompere un progetto innovativo che non ha ancora dato risultati? Come favorire dissenso autentico in contesti gerarchici? Come distribuire l'efficacia attraverso sistemi collettivi senza ridurla a una qualità individuale?
+Come attribuire risultati complessi a singoli contributi? Come bilanciare interessi economici, sociali e di sviluppo quando entrano in tensione? Quando interrompere un progetto innovativo ancora privo di risultati? Come favorire dissenso autentico in contesti gerarchici? Come distribuire l'efficacia attraverso sistemi collettivi senza ridurla a una qualità individuale?
 
 ## Connessioni con altre discipline
 
@@ -531,7 +531,7 @@ Perché bisogna distinguere limiti compatibili da carenze che impediscono il con
 
 ### 6. Perché definire le posteriorità può risultare difficile?
 
-Perché ogni attività possiede sostenitori, aspettative e una storia. La posteriorità comporta costi politici e psicologici, ma libera risorse per le priorità realmente importanti.
+Perché ogni attività possiede sostenitori, aspettative e una storia. La posteriorità comporta costi politici e psicologici e permette di liberare risorse per le priorità realmente importanti.
 
 ### 7. Perché i problemi ricorrenti richiedono decisioni generali?
 
