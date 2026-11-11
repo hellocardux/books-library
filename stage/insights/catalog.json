@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "collection": "After Hours / Reading Notes",
+  "updated": "2026-11-11",
+  "items": [
+    {
+      "slug": "conversazioni-cruciali",
+      "bookId": "conversazioni-cruciali",
+      "title": "Conversazioni cruciali",
+      "subtitle": "Come affrontare i dialoghi che contano davvero",
+      "author": "Joseph Grenny, Kerry Patterson, Ron McMillan, Al Switzler, Emily Gregory",
+      "year": 2024,
+      "field": "Comunicazione · Leadership",
+      "description": "Una guida ragionata al dialogo quando le opinioni divergono, le emozioni crescono e le conseguenze contano. Tredici capitoli, modelli, lettura critica e strumenti per ricordare.",
+      "chapters": 13,
+      "sections": 7,
+      "readingStatus": "In lettura",
+      "label": "READING NOTES / 001",
+      "updated": "2026-11-11",
+      "status": "preview"
+    }
+  ]
+}
