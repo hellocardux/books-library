@@ -46,13 +46,14 @@
     const days = inclusiveDays(book.started);
     const authors=escape(book.author);
     const extra=book.editionLabel?'<p class="edition">'+escape(book.editionLabel)+'</p>':"";
+    const source=book.sourceUrl?'<a class="source-link" href="'+escape(book.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Scheda del libro ↗</a>':"";
     return '<div class="current-layout"><div class="current-cover">'+cover(book,"cover-current")+'</div>'
       +'<div class="current-info">'
       +'<h3>'+escape(book.title)+'</h3>'
       +(book.subtitle?'<p class="current-subtitle">'+escape(book.subtitle)+'</p>':"")
       +'<p class="current-author">'+authors+'</p>'+extra
       +'<div class="reading-since"><span>INIZIATO IL</span><strong>'+date(book.started,true)+'</strong><small>'+days+' '+(days===1?"giorno":"giorni")+' dall’inizio</small></div>'
-      +'</div></div>';
+      +source+'</div></div>';
   }
   function finishedCard(book) {
     const days = inclusiveDays(book.started,book.finished);
