@@ -50,6 +50,54 @@
           "anchor": "capitolo-5"
         }
       ]
+    },
+    {
+      "slug": "effective-executive",
+      "bookId": "effective-executive",
+      "title": "The Effective Executive",
+      "subtitle": "L'efficacia non è un talento. È una disciplina che si apprende.",
+      "author": "Peter F. Drucker",
+      "year": 1967,
+      "field": "Management · Decisioni · Leadership",
+      "description": "Una guida approfondita alle cinque pratiche dell'efficacia: tempo, contributo, punti di forza, priorità e decisioni. Sette capitoli, dieci idee fondamentali, analisi critica e ripasso.",
+      "chapters": 7,
+      "sections": 7,
+      "readingStatus": "Terminato",
+      "label": "READING NOTES / 002",
+      "updated": "2026-11-11",
+      "status": "preview",
+      "ideas": 10,
+      "remember": 20,
+      "heroLead": "The Effective",
+      "heroEmphasis": "Executive.",
+      "coverLines": [
+        "The Effective",
+        "Executive."
+      ],
+      "coverTagline": "Fare le cose che contano.",
+      "editionLabel": "1967 · Edizione del cinquantenario, 2017",
+      "framework": [
+        {
+          "label": "TEMPO",
+          "text": "Conoscere",
+          "anchor": "capitolo-2"
+        },
+        {
+          "label": "CONTRIBUTO",
+          "text": "Orientare",
+          "anchor": "capitolo-3"
+        },
+        {
+          "label": "PRIORITÀ",
+          "text": "Concentrare",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "DECISIONI",
+          "text": "Agire",
+          "anchor": "capitolo-6"
+        }
+      ]
     }
   ]
 }
