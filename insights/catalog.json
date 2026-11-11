@@ -4,6 +4,57 @@
   "updated": "2026-11-11",
   "items": [
     {
+      "slug": "conversazioni-cruciali",
+      "bookId": "conversazioni-cruciali",
+      "title": "Conversazioni cruciali",
+      "subtitle": "Come affrontare i dialoghi che contano davvero",
+      "author": "Joseph Grenny, Kerry Patterson, Ron McMillan, Al Switzler, Emily Gregory",
+      "year": 2024,
+      "field": "Comunicazione · Leadership",
+      "description": "Una guida ragionata al dialogo quando le opinioni divergono, le emozioni crescono e le conseguenze contano. Tredici capitoli, modelli, lettura critica e strumenti per ricordare.",
+      "chapters": 13,
+      "sections": 7,
+      "readingStatus": "Terminato",
+      "label": "READING NOTES / 001",
+      "updated": "2026-11-11",
+      "status": "published",
+      "ideas": 10,
+      "remember": 20,
+      "heroLead": "Conversazioni",
+      "heroEmphasis": "cruciali.",
+      "coverLines": [
+        "Conversazioni",
+        "cruciali."
+      ],
+      "coverTagline": "Quando la posta in gioco è alta.",
+      "editionLabel": "ROI Edizioni, 2024",
+      "framework": [
+        {
+          "label": "OSSERVARE",
+          "text": "Fatti",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "INTERPRETARE",
+          "text": "Storie",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "PROVARE",
+          "text": "Emozioni",
+          "anchor": "capitolo-5"
+        },
+        {
+          "label": "REAGIRE",
+          "text": "Azioni",
+          "anchor": "capitolo-5"
+        }
+      ],
+      "finished": "2026-11-11",
+      "rating": 5,
+      "ratingStars": 2.5
+    },
+    {
       "slug": "effective-executive",
       "bookId": "effective-executive",
       "title": "The Effective Executive",
