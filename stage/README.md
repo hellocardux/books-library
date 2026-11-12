@@ -24,7 +24,7 @@ Inserire un elemento nell'array `reading`:
 }
 ```
 
-Opzionali: `subtitle`, `editionLabel`, `sourceUrl`, `coverBy`.
+Opzionali: `subtitle` (sottotitolo visibile), `description` (breve descrizione editoriale neutra), `editionLabel`, `sourceUrl`, `coverBy`. Se è presente `subtitle`, l'eventuale `editionLabel` non viene visualizzata nella scheda della lettura in corso. Non è previsto un campo per riflessioni personali.
 
 ### Segnare un libro come terminato
 
@@ -52,4 +52,4 @@ Queste sono copertine tipografiche originali, non scansioni delle copertine degl
 
 Solo HTML, CSS e JavaScript. Nessun framework, database, build o servizio a pagamento richiesto. I dati restano nel repository pubblico.
 
-Fonte bibliografica del titolo in lettura: https://www.roiedizioni.it/prodotto/libri/conversazioni-cruciali/
+Fonte bibliografica del titolo attualmente in lettura: https://www.mondadoristore.it/volere-troppo-e-ottenerlo-le-nuove-regole-della-negoziazione-libro-chris-voss/p/9788869872938

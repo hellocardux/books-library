@@ -35,20 +35,20 @@ body.theme-room{--bg:#f8f5ed;--fg:#292d28;--muted:#747970;--accent:#cc493c;--lin
 .line-link:hover{color:var(--accent)}
 .hero-aside{min-width:0;position:relative}
 .top-rail{display:flex;justify-content:space-between;gap:20px;align-items:center;border-top:1px solid var(--line);padding:15px 1px 18px;color:var(--muted);font:700 10px var(--mono);letter-spacing:.08em}
-.top-rail .signal{color:var(--accent);white-space:nowrap}
+.top-rail .signal{color:var(--accent);white-space:nowrap;display:inline-flex;align-items:center;gap:9px}
 #reading-panel{min-height:375px}
 .current-layout{display:grid;grid-template-columns:minmax(130px,.69fr) minmax(0,1fr);gap:25px;padding:30px 25px;background:var(--panel);border:1px solid var(--line);align-items:center}
 .current-cover{perspective:900px;align-self:center;padding:10px}
 .current-cover .book-cover{transform:rotate(-6deg) rotateY(-10deg);box-shadow:16px 23px 27px rgba(0,0,0,.24);transition:transform .28s}
 .current-cover:hover .book-cover{transform:rotate(-1deg) rotateY(0deg)}
 .current-info{min-width:0}
-.current-status{font:700 10px var(--mono);letter-spacing:.06em;color:var(--accent);display:flex;align-items:center;gap:9px;margin-bottom:18px}
 .status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent),transparent 80%);animation:breathe 2.7s ease-in-out infinite}
 .current-info h3{font:600 clamp(27px,2.7vw,40px)/1.08 var(--display);letter-spacing:-.062em;margin:0 0 13px;text-wrap:balance}
-.current-subtitle{font:400 12px/1.55 var(--sans);color:var(--muted);margin:0 0 15px}
-.current-author{font:500 12px/1.55 var(--sans);margin:0 0 6px}
+.current-subtitle{font:500 12px/1.5 var(--sans);color:var(--accent-light);margin:0 0 12px}
+.current-author{font:500 12px/1.55 var(--sans);margin:0 0 7px}
+.current-summary{font:400 12px/1.62 var(--sans);color:var(--muted);margin:12px 0 0;max-width:335px}
 .edition{font:400 11px/1.5 var(--sans);color:var(--muted);margin:7px 0}
-.reading-since{display:flex;flex-direction:column;gap:5px;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.reading-since{display:flex;flex-direction:column;gap:5px;margin-top:19px;padding-top:15px;border-top:1px solid var(--line)}
 .reading-since span{font:700 9px var(--mono);color:var(--muted);letter-spacing:.09em}
 .reading-since strong{font:600 14px var(--display)}
 .reading-since small{font:500 11px var(--sans);color:var(--muted)}
@@ -234,6 +234,7 @@ dialog::backdrop{background:rgba(4,9,7,.78);backdrop-filter:blur(5px)}
   .current-cover{padding:3px}
   .current-info h3,.theme-room .current-info h3{font-size:clamp(23px,6vw,33px)}
   .current-subtitle{font-size:11px}
+  .current-summary{font-size:11px;line-height:1.55;margin-top:10px}
   .current-author,.edition{font-size:10px}
   .reading-since{margin-top:15px;padding-top:14px}
   .reading-since strong{font-size:12px}

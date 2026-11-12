@@ -13,9 +13,11 @@ window.CARDUX_BOOKS = {
     {
       id: "volere-troppo",
       title: "Volere troppo e ottenerlo",
-      author: "Chris Voss & Tahl Raz",
+      subtitle: "Le nuove regole della negoziazione",
+      author: "Chris Voss, con Tahl Raz",
       year: 2016,
       editionLabel: "Titolo originale: Never Split the Difference",
+      description: "Le tecniche di un ex negoziatore dell’FBI per affrontare trattative difficili, usando ascolto, empatia e domande mirate.",
       started: "2026-11-12",
       cover: { bg:"#2f4a3f", ink:"#f3efe2", accent:"#d9a35b", motif:"lines" }
     }

@@ -44,14 +44,16 @@
     if (!book) return '<div class="reading-empty"><span class="eyebrow">IN LETTURA</span><h3>Il prossimo capitolo deve ancora arrivare.</h3><p>Nessun titolo in lettura al momento.</p></div>';
     const days = inclusiveDays(book.started);
     const authors=escape(book.author);
-    const extra=book.editionLabel?'<p class="edition">'+escape(book.editionLabel)+'</p>':"";
+    const extra=book.editionLabel&&!book.subtitle?'<p class="edition">'+escape(book.editionLabel)+'</p>':"";
+    const description=book.description?'<p class="current-summary">'+escape(book.description)+'</p>':"";
+    const elapsed=days>1?'<small>In lettura da '+days+' giorni</small>':"";
     const source=book.sourceUrl?'<a class="source-link" href="'+escape(book.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Scheda del libro <span aria-hidden="true">↗</span></a>':"";
     return '<div class="current-layout"><div class="current-cover">'+cover(book,"cover-current")+'</div>'
-      +'<div class="current-info"><div class="current-status"><span class="status-dot"></span> IN LETTURA / KINDLE</div>'
+      +'<div class="current-info">'
       +'<h3>'+escape(book.title)+'</h3>'
       +(book.subtitle?'<p class="current-subtitle">'+escape(book.subtitle)+'</p>':"")
-      +'<p class="current-author">'+authors+'</p>'+extra
-      +'<div class="reading-since"><span>INIZIATO IL</span><strong>'+date(book.started,true)+'</strong><small>'+days+' '+(days===1?"giorno":"giorni")+' dall’inizio</small></div>'
+      +'<p class="current-author">'+authors+'</p>'+extra+description
+      +'<div class="reading-since"><span>INIZIATO IL</span><strong>'+date(book.started,true)+'</strong>'+elapsed+'</div>'
       +source+'</div></div>';
   }
   function finishedCard(book) {
