@@ -8,8 +8,17 @@
    An editionLabel can specify the edition actually being read.
 */
 window.CARDUX_BOOKS = {
-  updated: "2026-11-11",
+  updated: "2026-11-12",
   reading: [
+    {
+      id: "volere-troppo",
+      title: "Volere troppo e ottenerlo",
+      author: "Chris Voss & Tahl Raz",
+      year: 2016,
+      editionLabel: "Titolo originale: Never Split the Difference",
+      started: "2026-11-12",
+      cover: { bg:"#2f4a3f", ink:"#f3efe2", accent:"#d9a35b", motif:"lines" }
+    }
   ],
   finished: [
     {
