@@ -1,7 +1,7 @@
 {
   "version": 1,
   "collection": "After Hours / Reading Notes",
-  "updated": "2026-11-12",
+  "updated": "2026-11-15",
   "items": [
     {
       "slug": "conversazioni-cruciali",
@@ -152,6 +152,57 @@
           "anchor": "capitolo-26"
         }
       ]
+    },
+    {
+      "slug": "volere-troppo",
+      "bookId": "volere-troppo",
+      "title": "Volere troppo e ottenerlo",
+      "subtitle": "Le nuove regole della negoziazione",
+      "author": "Chris Voss, con Tahl Raz",
+      "year": 2017,
+      "field": "Negoziazione · Psicologia · Comunicazione",
+      "description": "Lezioni dall'esperienza di negoziazione dell'FBI: ascolto tattico, empatia, domande calibrate, modello Ackerman e Cigni Neri. Dieci capitoli, appendice, dieci idee fondamentali, lettura critica e ripasso.",
+      "chapters": 10,
+      "sections": 7,
+      "readingStatus": "Terminato",
+      "label": "READING NOTES / 004",
+      "updated": "2026-11-14",
+      "status": "published",
+      "ideas": 10,
+      "remember": 20,
+      "heroLead": "Volere troppo",
+      "heroEmphasis": "e ottenerlo.",
+      "coverLines": [
+        "Volere troppo",
+        "e ottenerlo."
+      ],
+      "coverTagline": "La negoziazione comincia ascoltando.",
+      "editionLabel": "Vallardi · 2017",
+      "framework": [
+        {
+          "label": "ASCOLTARE",
+          "text": "Comprendere",
+          "anchor": "capitolo-2"
+        },
+        {
+          "label": "RICONOSCERE",
+          "text": "Emozioni",
+          "anchor": "capitolo-3"
+        },
+        {
+          "label": "DOMANDARE",
+          "text": "Sbloccare",
+          "anchor": "capitolo-7"
+        },
+        {
+          "label": "SCOPRIRE",
+          "text": "Cigni Neri",
+          "anchor": "capitolo-10"
+        }
+      ],
+      "finished": "2026-11-14",
+      "rating": 6.5,
+      "ratingStars": 3.25
     }
   ]
 }

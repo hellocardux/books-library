@@ -2,14 +2,15 @@
    Edit this file to update BOTH stage designs. No build tools required.
 
    To finish a book: move its object from reading[] into finished[] and add
-   finished: "YYYY-MM-DD" and rating: 8.5. Leave started unchanged.
+   finished: "YYYY-MM-DD". Add rating when available. Leave started unchanged.
    Reading-day counts, rankings and all statistics are calculated automatically.
    The "year" field refers to the original work's first publication.
    An editionLabel can specify the edition actually being read.
 */
 window.CARDUX_BOOKS = {
-  updated: "2026-11-12",
-  reading: [
+  updated: "2026-11-15",
+  reading: [],
+  finished: [
     {
       id: "volere-troppo",
       title: "Volere troppo e ottenerlo",
@@ -19,10 +20,10 @@ window.CARDUX_BOOKS = {
       editionLabel: "Titolo originale: Never Split the Difference",
       description: "Le tecniche di un ex negoziatore dell’FBI per affrontare trattative difficili, usando ascolto, empatia e domande mirate.",
       started: "2026-11-12",
+      finished: "2026-11-14",
+      rating: 6.5,
       cover: { bg:"#2f4a3f", ink:"#f3efe2", accent:"#d9a35b", motif:"lines" }
-    }
-  ],
-  finished: [
+    },
     {
       id: "conversazioni-cruciali",
       title: "Conversazioni cruciali",

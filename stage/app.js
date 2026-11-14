@@ -25,7 +25,8 @@
   const complete = data.finished;
   const current = data.reading;
   const totalDays = complete.reduce((sum,b)=>sum+inclusiveDays(b.started,b.finished),0);
-  const meanRating = complete.length?complete.reduce((sum,b)=>sum+b.rating,0)/complete.length:0;
+  const rated = complete.filter(b=>Number.isFinite(b.rating));
+  const meanRating = rated.length?rated.reduce((sum,b)=>sum+b.rating,0)/rated.length:0;
   const averageDays = complete.length?totalDays/complete.length:0;
   const cardTitle = (title) => title.replace(/\s+\(in inglese\)$/,"");
   function cover(book,kind="") {
@@ -59,13 +60,14 @@
   function finishedCard(book) {
     const days = inclusiveDays(book.started,book.finished);
     const title = escape(book.title);
+    const ratingTag = Number.isFinite(book.rating)?'VOTO <strong>'+num(book.rating)+'/10</strong>':'DA VALUTARE';
     return '<button type="button" class="book-card" data-book="'+escape(book.id)+'" aria-label="Dettagli di '+title+'">'
       +'<span class="book-art">'+cover(book,"cover-small")+'</span>'
       +'<span class="book-info">'
       +'<span class="book-meta">'+escape(book.year)+' <span aria-hidden="true">·</span> '+days+' '+(days===1?"giorno":"giorni")+'</span>'
       +'<strong class="book-title">'+title+'</strong>'
       +'<span class="book-author">'+escape(book.author)+'</span>'
-      +'<span class="book-end"><span>VOTO <strong>'+num(book.rating)+'/10</strong></span><span class="book-more">DETTAGLI ↗</span></span>'
+      +'<span class="book-end"><span>'+ratingTag+'</span><span class="book-more">DETTAGLI ↗</span></span>'
       +'</span></button>';
   }
   function barChart(bookList,getValue,maxValue,suffix) {
@@ -90,12 +92,12 @@
       +'<div><span>INIZIO</span><strong>'+date(book.started,true)+'</strong></div>'
       +'<div><span>FINE</span><strong>'+date(book.finished,true)+'</strong></div>'
       +'<div><span>DURATA</span><strong>'+inclusiveDays(book.started,book.finished)+' giorni</strong></div>'
-      +'<div><span>VOTO</span><strong>'+num(book.rating)+' / 10</strong></div>';
+      +'<div><span>VOTO</span><strong>'+(Number.isFinite(book.rating)?num(book.rating)+' / 10':'Da valutare')+'</strong></div>';
     if(typeof dialog.showModal==="function") dialog.showModal();
   }
   function renderFinished(order="recent") {
     const books=complete.slice();
-    if(order==="rating") books.sort((a,b)=>b.rating-a.rating||b.finished.localeCompare(a.finished));
+    if(order==="rating") books.sort((a,b)=>(Number.isFinite(b.rating)?b.rating:-1)-(Number.isFinite(a.rating)?a.rating:-1)||b.finished.localeCompare(a.finished));
     else if(order==="duration") books.sort((a,b)=>inclusiveDays(a.started,a.finished)-inclusiveDays(b.started,b.finished)||b.finished.localeCompare(a.finished));
     else books.sort((a,b)=>b.finished.localeCompare(a.finished));
     $("book-grid").innerHTML=books.map(finishedCard).join("");
@@ -104,13 +106,15 @@
   function render() {
     $("stat-books").textContent=String(complete.length).padStart(2,"0");
     $("stat-days").textContent=String(totalDays).padStart(2,"0");
-    $("stat-rating").textContent=complete.length?num(meanRating,2):"—";
+    $("stat-rating").textContent=rated.length?num(meanRating,2):"—";
     $("stat-pace").textContent=complete.length?num(averageDays,1):"—";
     $("count-books").textContent=String(complete.length).padStart(2,"0");
     $("reading-panel").innerHTML=readingPanel(current[0]);
+    const signal=document.querySelector(".hero-aside .signal");
+    if(signal) signal.innerHTML=current.length?'<span class="status-dot" aria-hidden="true"></span> IN LETTURA':'NESSUNA LETTURA';
     const readingExtra=$("reading-extra");
     if(readingExtra) readingExtra.textContent=current.length>1?"Altri "+(current.length-1)+" libri in lettura":'';
-    $("rating-chart").innerHTML=barChart(complete.slice().sort((a,b)=>b.rating-a.rating),b=>b.rating,10,()=>"/ 10");
+    $("rating-chart").innerHTML=barChart(rated.slice().sort((a,b)=>b.rating-a.rating),b=>b.rating,10,()=>"/ 10");
     const maxDays=Math.max(1,...complete.map(b=>inclusiveDays(b.started,b.finished)));
     $("duration-chart").innerHTML=barChart(complete.slice().sort((a,b)=>b.finished.localeCompare(a.finished)),b=>inclusiveDays(b.started,b.finished),maxDays,n=>n===1?"giorno":"giorni");
     $("last-update").textContent="Aggiornato il "+date(data.updated,true);

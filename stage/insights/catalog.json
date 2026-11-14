@@ -1,7 +1,7 @@
 {
   "version": 1,
   "collection": "After Hours / Reading Notes",
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "items": [
     {
       "slug": "conversazioni-cruciali",
@@ -164,7 +164,7 @@
       "description": "Lezioni dall'esperienza di negoziazione dell'FBI: ascolto tattico, empatia, domande calibrate, modello Ackerman e Cigni Neri. Dieci capitoli, appendice, dieci idee fondamentali, lettura critica e ripasso.",
       "chapters": 10,
       "sections": 7,
-      "readingStatus": "In lettura",
+      "readingStatus": "Terminato",
       "label": "READING NOTES / 004",
       "updated": "2026-11-14",
       "status": "preview",
@@ -199,7 +199,10 @@
           "text": "Cigni Neri",
           "anchor": "capitolo-10"
         }
-      ]
+      ],
+      "finished": "2026-11-14",
+      "rating": 6.5,
+      "ratingStars": 3.25
     }
   ]
 }
