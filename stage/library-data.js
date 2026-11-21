@@ -8,8 +8,10 @@
    An editionLabel can specify the edition actually being read.
 */
 window.CARDUX_BOOKS = {
-  updated: "2026-11-16",
+  updated: "2026-11-21",
   reading: [
+  ],
+  finished: [
     {
       id: "la-mia-storia",
       title: "La mia storia",
@@ -18,10 +20,11 @@ window.CARDUX_BOOKS = {
       editionLabel: "Rizzoli",
       description: "L’autobiografia di Valentino Rossi, scritta con Giorgio Terruzzi: l’infanzia, le rivalità e i titoli mondiali, e la vita di oggi tra famiglia, VR46 e le corse a quattro ruote.",
       started: "2026-11-16",
+      finished: "2026-11-21",
+      rating: 6,
       cover: { bg:"#24211b", ink:"#f6ebc4", accent:"#e2b424", motif:"seal" }
     }
-  ],
-  finished: [
+,
     {
       id: "volere-troppo",
       title: "Volere troppo e ottenerlo",
