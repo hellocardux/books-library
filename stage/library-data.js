@@ -8,8 +8,19 @@
    An editionLabel can specify the edition actually being read.
 */
 window.CARDUX_BOOKS = {
-  updated: "2026-11-21",
+  updated: "2026-11-25",
   reading: [
+    {
+      id: "dritto-al-sodo",
+      title: "Dritto al sodo",
+      subtitle: "Come scegliere ciò che conta e vivere felici",
+      author: "Greg McKeown",
+      year: 2014,
+      editionLabel: "De Agostini",
+      description: "Un metodo per scegliere con disciplina le poche attività che meritano tempo ed energie, e per togliere dal calendario ciò che le distrae.",
+      started: "2026-11-24",
+      cover: { bg:"#31475c", ink:"#f4efe6", accent:"#d2b48a", motif:"steps" }
+    }
   ],
   finished: [
     {
